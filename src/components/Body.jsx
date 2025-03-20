@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import restaurantList from "../utils/mockData";
 import { useState, useEffect } from "react";
-import ShimmerUI from "./ShimmerUI";
+import { ResCardShimmer } from "./ShimmerUI";
 
 const Body = () => {
   const [filteredRestList, setFilteredRestList] = useState([]);
@@ -53,7 +53,7 @@ const Body = () => {
   //if restList is empty => shimmer UI
   // if restourant list is not empty => Actual Data UI
   return filteredRestList.length == 0 ? (
-    <ShimmerUI />
+    <ResCardShimmer />
   ) : (
     <>
       <div className="search-container">

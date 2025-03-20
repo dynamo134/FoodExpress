@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Shimmer from "./ShimmerUI";
+import { ResMenuShimmer, ResCardShimmer } from "./ShimmerUI";
 export const RestaurantMenu = () => {
   const [restaurantData, setRestaurantData] = React.useState([]);
   useEffect(() => {
-    getRestaaurantMenu();
+    //getRestaaurantMenu();
   }, []);
 
   const getRestaaurantMenu = async () => {
@@ -14,11 +14,9 @@ export const RestaurantMenu = () => {
     setRestaurantData(data);
   };
   const { id } = useParams();
-
-  if (!restaurantData) {
-    return <Shimmer />;
-  }
-  return (
+  return restaurantData.length == 0 ? (
+    <ResMenuShimmer />
+  ) : (
     <div>
       <h1>Reastaurant id : {id}</h1>
       <h2>Namaste</h2>

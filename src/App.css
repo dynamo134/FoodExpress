@@ -358,3 +358,159 @@
     width: 100%;
   }
 }
+
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Base shimmer effect */
+.shimmer-menu-animate {
+  background: linear-gradient(90deg, #f6f7f8 25%, #edeef1 50%, #f6f7f8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+/* Menu container */
+.menu-conatiner {
+  max-width: 800px;
+  margin: 20px auto 0;
+  padding: 15px;
+}
+
+/* Header shimmer */
+.shimmer-menu-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Menu section */
+.menu {
+  width: calc(100% - 120px);
+}
+
+.menu div {
+  height: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* Rating shimmer */
+.rating {
+  border: 1px solid #e9e9eb;
+  box-shadow: 0 1px 5px #f9f9f9;
+  border-radius: 6px;
+  text-align: center;
+  padding: 8px;
+  max-width: 100px;
+  float: right;
+}
+
+.shimmer-rating-box {
+  width: 50px;
+  height: 20px;
+}
+
+/* Menu price shimmer */
+.menu-price {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.shimmer-menu-price {
+  width: 60px;
+  height: 15px;
+}
+
+/* Menu info shimmer */
+.menu-info {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.shimmer-menu-info {
+  width: 100%;
+  height: 20px;
+}
+
+/* Menu border */
+.menu-border {
+  border-top: 8px solid #f1f1f6;
+}
+
+/* Category section */
+.category-conatiner {
+  margin: 20px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.shimmer-category-header {
+  width: 40%;
+  height: 25px;
+}
+
+/* Item container shimmer */
+.item-container {
+  padding: 25px 0;
+  border-bottom: 0.5px solid #d3d3d3;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Item info shimmer */
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  max-width: calc(100% - 144px);
+}
+
+.shimmer-item-info div {
+  width: 100%;
+  height: 14px;
+}
+
+/* Item image shimmer */
+.item-img {
+  position: relative;
+  height: 114px;
+}
+
+.shimmer-item-img {
+  width: 118px;
+  height: 96px;
+  border-radius: 6px;
+}
+
+/* Button shimmer */
+.item-img button {
+  bottom: 5%;
+  position: absolute;
+  left: 11%;
+  padding: 7px 32px;
+  box-shadow: 0 3px 8px #e9e9eb;
+  border-radius: 4px;
+  background-color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  width: 70px;
+  height: 30px;
+}
