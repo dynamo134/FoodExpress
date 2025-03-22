@@ -3,6 +3,7 @@ import useRestaurantAndFilter from "../hooks/useRestaurantAndFilter";
 import { useState, useEffect } from "react";
 import { ResCardShimmer } from "./ShimmerUI";
 import { filter } from "../utils/helper";
+import useOnline from "../hooks/useOnline";
 
 const Body = () => {
   // const [filteredRestList, setFilteredRestList] = useState([]);
@@ -25,6 +26,11 @@ const Body = () => {
     SetFilterRestaurant(filteredData);
   };
 
+  const offline = useOnline();
+
+  if (!offline) {
+    return <h1>Offline, Please check your internet Connection !!</h1>;
+  }
   //Condintional rendering
   //if restList is empty => shimmer UI
   // if restourant list is not empty => Actual Data UI

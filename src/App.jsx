@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
-import About from "./components/AboutUs";
+import About from "./pages/AboutUs";
 import Body from "./components/Body";
 import "./App.css";
-import { ContactUs } from "./components/ContactUS";
-import { Cart } from "./components/Cart";
+import { ContactUs } from "./pages/ContactUs";
+import { Cart } from "./pages/Cart";
 import { RestaurantMenu } from "./components/RestaurantMenu";
 
 function App() {
