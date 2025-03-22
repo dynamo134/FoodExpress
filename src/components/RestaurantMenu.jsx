@@ -1,19 +1,13 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { ResMenuShimmer, ResCardShimmer } from "./ShimmerUI";
+import { ResMenuShimmer } from "./ShimmerUI";
+import useRestaurantMenu from "../hooks/useRestaurantMenu";
 export const RestaurantMenu = () => {
-  const [restaurantData, setRestaurantData] = React.useState([]);
-  useEffect(() => {
-    //getRestaaurantMenu();
-  }, []);
-
-  const getRestaaurantMenu = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data = await response.json();
-    console.log(data);
-    setRestaurantData(data);
-  };
+  //const [restaurantData, setRestaurantData] = React.useState([]);
   const { id } = useParams();
+
+  const restaurantData = useRestaurantMenu(id);
+
   return restaurantData.length == 0 ? (
     <ResMenuShimmer />
   ) : (
