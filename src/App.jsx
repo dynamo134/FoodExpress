@@ -3,8 +3,8 @@ import Layout from "./components/Layout";
 import About from "./pages/AboutUs";
 import Body from "./components/Body";
 import "./App.css";
-import { ContactUs } from "./pages/ContactUs";
-import { Cart } from "./pages/Cart";
+import ContactUs from "./pages/ContactUs";
+import Cart from "./pages/Cart";
 import { RestaurantMenu } from "./components/RestaurantMenu";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path="/restaurant/:id" element={<RestaurantMenu />} />
       </Route>
     </Routes>
-  ); 
+  );
 }
 
 export default App;

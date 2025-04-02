@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { ResCardShimmer } from "./ShimmerUI";
 import { filter } from "../utils/helper";
 import useOnline from "../hooks/useOnline";
+import { Link } from "react-router-dom";
+import OfflinePage from "../pages/Offline";
 
 const Body = () => {
   // const [filteredRestList, setFilteredRestList] = useState([]);
@@ -29,7 +31,7 @@ const Body = () => {
   const offline = useOnline();
 
   if (!offline) {
-    return <h1>Offline, Please check your internet Connection !!</h1>;
+    return <OfflinePage />;
   }
   //Condintional rendering
   //if restList is empty => shimmer UI
@@ -50,10 +52,27 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
-        {filterRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} {...restaurant.data} />
-        ))}
+      <div className="Food-menu">
+        {/* <h2 className="food-menu-title">{title}</h2> */}
+        {filterRestaurant.length === 0 ? (
+          <div className="no-results-found">
+            <img
+              //src={noresult}
+              alt="Search Results Are Finished - No Results Found Cartoon@clipartmax.com"
+            />
+          </div>
+        ) : (
+          <div className="Food-card">
+            {filterRestaurant.map((restaurant) => (
+              <Link
+                key={restaurant.info.id}
+                to={"/restaurants/" + restaurant.info.id}
+              >
+                <RestaurantCard resData={restaurant} />
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </>
   );
